@@ -4,18 +4,19 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         
-        l, r = 0, len(nums) - 1
-        i = 0
+        l = 0
+        r = len(nums) - 1
 
-        def swap(x, y):
-            nums[x], nums[y] = nums[y], nums[x]
-        
-        while i <= r:
-            if nums[i] == 0:
-                swap(l, i)
+        def swap(i, j):
+            nums[i], nums[j] = nums[j], nums[i]
+
+        index = 0
+        while index <= r:
+            if nums[index] == 0:
+                swap(l, index)
                 l += 1
-            elif nums[i] == 2:
-                swap(i, r)
+            elif nums[index] == 2:
+                swap(index, r)
                 r -= 1
-                i -= 1
-            i += 1
+                index -= 1
+            index += 1
