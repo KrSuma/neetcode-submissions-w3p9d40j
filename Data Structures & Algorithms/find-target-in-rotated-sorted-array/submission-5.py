@@ -14,10 +14,10 @@ class Solution:
                     r = m - 1
                 else:
                     l = m + 1
-            else:
+            elif nums[m] < nums[r]:
                 if nums[m] <= target <= nums[r]:
                     l = m + 1
                 else:
                     r = m - 1
-
+        
         return -1
